@@ -7,7 +7,7 @@ import {
 import { RouterHead } from "./components/router-head/router-head";
 import { isServer } from '@builder.io/qwik/build';
 import "./global.css";
-import { setLocaleGetter} from 'vite-plugin-static-i18n'
+// import { setLocaleGetter} from 'compiled-i18n'
 // import {currentLocale} from '@i18n/__state'
 
 export function getCookie(cookieName) {
@@ -51,11 +51,11 @@ export default component$(() => {
     //    currentLocale = lang
     // }
 
-    setLocaleGetter(()=>{ 
-      // this only works in dev. 
-      const c = getCookie("locale");
-      return c;
-    })
+    // setLocaleGetter(()=>{ 
+    //   // this only works in dev. 
+    //   const c = getCookie("locale");
+    //   return c;
+    // })
   },{eagerness:"load"});
   return (
     <QwikCityProvider>

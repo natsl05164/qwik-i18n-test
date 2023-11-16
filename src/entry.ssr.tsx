@@ -16,7 +16,7 @@ import {
 } from "@builder.io/qwik/server";
 import { manifest } from "@qwik-client-manifest";
 import Root from "./root";
-import {defaultLocale, setLocaleGetter} from 'vite-plugin-static-i18n'
+import {defaultLocale, setLocaleGetter} from 'compiled-i18n'
 import { getLocale } from '@builder.io/qwik';
 setLocaleGetter(() => getLocale(defaultLocale))
 import type { RenderOptions } from '@builder.io/qwik';

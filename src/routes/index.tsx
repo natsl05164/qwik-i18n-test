@@ -6,7 +6,7 @@ import footer from "~/components/starter/footer/footer";
 import Hero from "~/components/starter/hero/hero";
 import Infobox from "~/components/starter/infobox/infobox";
 import Starter from "~/components/starter/next-steps/next-steps";
-import { localize,_} from 'vite-plugin-static-i18n';
+import { localize,_} from 'compiled-i18n';
 export function setCookie(name :string, value :string, daysToExpire:number):void {
   const expiration = new Date();
   expiration.setTime(expiration.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
@@ -24,7 +24,11 @@ export default component$(() => {
      foo.value =localize`Value is required`;
 
   })
+  const test2 = $(()=>{
 
+    foo.value = `Value is required`;
+
+ })
   const chglang = $(()=>{
 
     setCookie("locale", "nl", 366 );
@@ -37,7 +41,7 @@ export default component$(() => {
     <button onClick$={test}>Test</button>
     {foo.value}
 
-
+    <button onClick$={test2}>Test2</button>
   <div>
   <button onClick$={chglang}>chglang</button>
   </div>
